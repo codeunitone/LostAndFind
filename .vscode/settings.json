@@ -1,0 +1,12 @@
+{
+	"files.trimTrailingWhitespace": true,
+	"files.trimFinalNewlines": true,
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"editor.detectIndentation": false,
+	"al.enableCodeAnalysis": true,
+	"CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+	"CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+	"CRS.OnSaveAlFileAction": "Rename"
+  }-
