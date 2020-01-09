@@ -1,27 +1,20 @@
-codeunit 50000 "Lost and Find"
+codeunit 50100 "Lost and Find"
 {
-    trigger OnRun();
-    var
-        Selection: integer;
-        txtSelectionStr: Label 'IsEmpty,Get,FindFirst,FindLast,FindSetDefault,FindSetForUpdate,FindSetKeyUpdate,FindSetForUpdateAndKeyUpdate,FindMinus,FindPlus';
+    procedure RunAll();
     begin
-        Selection := StrMenu(txtSelectionStr);
-
-        case Selection of
-            1 : ItemIsEmpty();
-            2 : ItemGet();
-            3 : ItemFindFirst();
-            4 : ItemFindLast();
-            5 : ItemFindSetDefault;
-            6 : ItemFindSetForUpdate();
-            7 : ItemFindSetKeyUpdate();
-            8 : ItemFindSetForUpdateAndKeyUpdate();
-            9 : ItemFindMinus();
-            10 : ItemFindPlus();
-        end;
+        RunIsEmpty();
+        RunGet();
+        RunFindFirst();
+        RunFindLast();
+        RunFindSetDefault;
+        RunFindSetForUpdate();
+        RunFindSetKeyUpdate();
+        RunFindSetForUpdateAndKeyUpdate();
+        RunFindMinus();
+        RunFindPlus();
     end;
 
-    local procedure ItemIsEmpty();
+    procedure RunIsEmpty();
     var
         Item: Record Item;
     begin
@@ -30,7 +23,7 @@ codeunit 50000 "Lost and Find"
         if Item.IsEmpty() then;
     end;
 
-    local procedure ItemGet();
+    procedure RunGet();
     var
         Item: Record Item;
     begin
@@ -39,7 +32,7 @@ codeunit 50000 "Lost and Find"
         Item.Get('1000');
     end;
 
-    local procedure ItemFindFirst();
+    procedure RunFindFirst();
     var
         Item: Record Item;
     begin
@@ -48,7 +41,7 @@ codeunit 50000 "Lost and Find"
         Item.FindFirst();
     end;
 
-    local procedure ItemFindLast();
+    procedure RunFindLast();
     var
         Item: Record Item;
     begin
@@ -57,7 +50,7 @@ codeunit 50000 "Lost and Find"
         Item.FindLast();
     end;
 
-    local procedure ItemFindSetDefault();
+    procedure RunFindSetDefault();
     var
         Item: Record Item;
     begin
@@ -66,7 +59,7 @@ codeunit 50000 "Lost and Find"
         Item.FindSet();
     end;
 
-    local procedure ItemFindSetForUpdate();
+    procedure RunFindSetForUpdate();
     var
         Item: Record Item;
     begin
@@ -75,7 +68,7 @@ codeunit 50000 "Lost and Find"
         Item.FindSet(true, false);
     end;
 
-    local procedure ItemFindSetKeyUpdate();
+    procedure RunFindSetKeyUpdate();
     var
         Item: Record Item;
     begin
@@ -84,7 +77,7 @@ codeunit 50000 "Lost and Find"
         Item.FindSet(false, true);
     end;
 
-    local procedure ItemFindSetForUpdateAndKeyUpdate();
+    procedure RunFindSetForUpdateAndKeyUpdate();
     var
         Item: Record Item;
     begin
@@ -93,7 +86,7 @@ codeunit 50000 "Lost and Find"
         Item.FindSet(true, true);
     end;
 
-    local procedure ItemFindMinus();
+    procedure RunFindMinus();
     var
         Item: Record Item;
     begin
@@ -102,7 +95,7 @@ codeunit 50000 "Lost and Find"
         Item.Find('-');
     end;
 
-    local procedure ItemFindPlus();
+    procedure RunFindPlus();
     var
         Item: Record Item;
     begin
