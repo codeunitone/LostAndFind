@@ -63,7 +63,7 @@ page 50100 "Lost and Find"
 
                 trigger OnAction()
                 begin
-                    RunLostAndFind('FindSetDefaultlt');
+                    RunLostAndFind('FindSetDefault');
                 end;
             }
 
